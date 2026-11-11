@@ -16,8 +16,8 @@
 <text x="775" y="167" fill="white" font-size="19">Выполняет</text>
 <text x="775" y="192" fill="white" font-size="19">инструмент</text>
 <text x="305" y="259" fill="white" font-size="19">Код хоста связывает агента и MCP-клиент</text>
-<text x="628" y="88" fill="#bafffb" font-size="17">tools/call</text>
-<text x="633" y="239" fill="#bafffb" font-size="17">результат</text>
+<text x="650" y="88" fill="#bafffb" font-size="17">tools/call</text>
+<text x="650" y="239" fill="#bafffb" font-size="17">результат</text>
 </g>
 <g stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)">
 <path d="M270,135 L350,135"/><path d="M350,180 L270,180"/>
