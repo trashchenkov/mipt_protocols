@@ -156,3 +156,10 @@
 .source-card a {display:block;margin:8px 0;}
 
 .title-qr { margin-top: 26px; color: #071318; }
+
+.grid4 { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:16px; }
+.grid4 .panel { min-height:110px; padding:12px 16px; }
+.grid4 .panel h3 { font-size:24px; margin-bottom:6px; }
+.grid4 .panel p { font-size:18px!important; line-height:1.25!important; margin:4px 0; }
+
+.slidev-layout .lead, .slidev-layout .small, .corporate-section-bg p { opacity:1!important; }
