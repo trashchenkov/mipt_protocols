@@ -548,7 +548,7 @@ section: 'ДЗ'
 
 # Домашнее задание: RAG и MCP
 
-<div class="grid2"><div class="panel"><h3>Собрать</h3><p>Свой корпус → фрагменты → индекс<br>Готовый MCP-сервер поиска<br>Агент возвращает top-k и источники</p></div><div class="panel"><h3>Проверить и сдать</h3><p>15–20 запросов и ручная оценка<br>document_id, chunk_id, source<br>Код, конфигурация и инструкция запуска</p></div></div><p class="takeaway">Полные условия и критерии: <a href="https://github.com/trashchenkov/mipt_protocols/blob/main/homework_mcp_knowledge_base.pdf">PDF задания в репозитории</a>. Генерация ответа по фрагментам — по желанию.</p>
+<div class="grid2"><div class="panel"><h3>Собрать</h3><p>Свой корпус → локальные эмбеддинги<br>Индекс и готовый MCP-сервер поиска<br>Агент возвращает top-k и источники</p></div><div class="panel"><h3>Проверить и сдать</h3><p>15–20 запросов и ручная оценка<br>document_id, chunk_id, source<br>Код, конфигурация и инструкция запуска</p></div></div><p class="takeaway">Полные условия и критерии: <a href="https://github.com/trashchenkov/mipt_protocols/blob/main/homework_mcp_knowledge_base.pdf">PDF задания в репозитории</a>. По желанию: передать вопрос и top-k фрагменты в LLM; получить ответ со ссылками на источники.</p>
 
 <!-- Раздел блокнота: ДЗ -->
 
