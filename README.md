@@ -35,7 +35,8 @@ skills/
 
 Имя папки `qr-code` совпадает с `name` в YAML файла `SKILL.md`.
 `references/` и `assets/` добавляются, когда у навыка есть справочники или шаблоны.
-Deep Agents получает каталог явно через параметр `skills`; в примере рабочая папка отображается в виртуальную файловую систему.
+Параметр `skills` в `create_deep_agent` подключает штатный `SkillsMiddleware`: он обнаруживает навыки,
+а агент читает выбранный `SKILL.md` через `read_file`. В локальном примере файловые инструменты и shell используют реальные пути.
 Формат описан в [Agent Skills](https://agentskills.io/specification) и [подключению навыков Deep Agents](https://docs.langchain.com/oss/python/deepagents/skills).
 
 ## Установка

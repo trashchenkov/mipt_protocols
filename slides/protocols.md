@@ -591,9 +591,15 @@ section: '§ 18.1–18.2'
 section: '§ 18.3'
 ---
 
-# Skills: поиск и загрузка в LangChain
+# Skills: встроенный SkillsMiddleware
 
-<div class="flow"><div class="panel"><h3>list_skills</h3><p>Краткие описания</p></div><div class="arrow">→</div><div class="panel"><h3>load_skill</h3><p>Полный SKILL.md</p></div><div class="arrow">→</div><div class="panel"><h3>Агент</h3><p>План выполнения</p></div></div><p class="takeaway">В этом примере агент находит навык через list_skills и читает SKILL.md через load_skill. Запуск скриптов показан в предыдущем примере с Deep Agents.</p>
+```python
+agent = create_deep_agent(
+    model=model, backend=backend,
+    skills=[skills_dir.as_posix()],
+)
+```
+<div class="flow"><div class="panel"><h3>SkillsMiddleware</h3><p>Имена, описания<br>и пути к навыкам</p></div><div class="arrow">→</div><div class="panel"><h3>read_file</h3><p>Агент читает<br>выбранный SKILL.md</p></div><div class="arrow">→</div><div class="panel"><h3>execute</h3><p>Агент запускает<br>скрипты навыка</p></div></div><p class="takeaway">Посмотрите метаданные навыка в состоянии графа, чтение SKILL.md и команды в истории.</p>
 
 <!-- Раздел блокнота: § 18.3 -->
 
