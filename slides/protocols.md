@@ -41,9 +41,9 @@ section: '§ 1'
 section: '§ 1'
 ---
 
-# MCP: приложение, клиент и сервер
+# MCP: хост, клиент и сервер
 
-<p class="lead">Приложение (host) создаёт MCP-клиента и передаёт модели описания инструментов. Клиент отправляет вызов серверу, сервер выполняет операцию.</p><div class="figure"><img class="diagram" src="/diagrams/mcp.svg" /></div>
+<p class="lead">Хост (приложение) запускает агента и создаёт MCP-клиент для каждого сервера. Агент выбирает действие; клиент передаёт запрос и получает результат.</p><div class="figure"><img class="diagram" src="/diagrams/mcp.svg" /></div>
 
 <!-- Раздел блокнота: § 1 -->
 
@@ -54,7 +54,7 @@ section: '§ 2'
 
 # MCP: инструменты, ресурсы и промпты
 
-<div class="grid3"><div class="panel"><h3>Tools: инструменты</h3><p>Функции, которые клиент вызывает с аргументами.<br><br><code>search_rail</code>: поиск поездов</p></div><div class="panel"><h3>Resources: ресурсы</h3><p>Данные с адресом URI, например описание курса.<br><br><code>course://overview</code></p></div><div class="panel"><h3>Prompts: промпты</h3><p>Шаблоны сообщений, например запрос справки по теме.<br><br><code>prepare_lecture_brief</code></p></div></div><p class="takeaway">Сервер предоставляет три вида возможностей. Приложение выбирает ресурс и промпт, а модель выбирает вызов инструмента.</p>
+<div class="grid3"><div class="panel"><h3>Tools: инструменты</h3><p>Функции, которые клиент вызывает с аргументами.<br><br><code>search_rail</code>: поиск поездов</p></div><div class="panel"><h3>Resources: ресурсы</h3><p>Данные с адресом URI, например описание курса.<br><br><code>course://overview</code></p></div><div class="panel"><h3>Prompts: промпты</h3><p>Шаблоны сообщений, например запрос справки по теме.<br><br><code>prepare_lecture_brief</code></p></div></div><p class="takeaway">Сервер предоставляет три вида возможностей. Хост (приложение) получает ресурсы и промпты через MCP-клиент; агент выбирает вызов инструмента.</p>
 
 <!-- Раздел блокнота: § 2 -->
 
@@ -65,7 +65,7 @@ section: '§ 2'
 
 # MCP: как вызывается инструмент
 
-<div class="flow"><div class="panel"><h3>Модель</h3><p>Выбирает инструмент<br>и задаёт аргументы</p></div><div class="arrow">→</div><div class="panel"><h3>Приложение</h3><p>Отправляет MCP-запрос</p></div><div class="arrow">→</div><div class="panel"><h3>Сервер</h3><p>Выполняет операцию</p></div></div><p class="takeaway">ToolMessage — сообщение LangChain с результатом инструмента. Оно входит в историю, которую модель получает на следующем шаге.</p>
+<div class="flow"><div class="panel"><h3>Агент</h3><p>Выбирает инструмент<br>и задаёт аргументы</p></div><div class="arrow">→</div><div class="panel"><h3>Хост</h3><p>Через MCP-клиент<br>отправляет запрос</p></div><div class="arrow">→</div><div class="panel"><h3>MCP-сервер</h3><p>Выполняет операцию</p></div></div><p class="takeaway">ToolMessage — сообщение LangChain с результатом инструмента. Оно входит в историю, которую модель получает на следующем шаге.</p>
 
 <!-- Раздел блокнота: § 2 -->
 
@@ -76,7 +76,7 @@ section: '§ 2, 6'
 
 # MCP: чтение ресурса по URI
 
-<div class="flow"><div class="panel"><h3>Resource</h3><p>Описание курса по URI</p></div><div class="arrow">→</div><div class="panel"><h3>Приложение</h3><p>Читает содержимое</p></div><div class="arrow">→</div><div class="panel"><h3>Запрос к модели</h3><p>Содержит текст ресурса</p></div></div><p class="takeaway">URI — адрес ресурса в MCP. Клиент читает course://overview, а приложение добавляет полученное описание курса в запрос к модели.</p>
+<div class="flow"><div class="panel"><h3>Resource</h3><p>Описание курса по URI</p></div><div class="arrow">→</div><div class="panel"><h3>Хост</h3><p>Читает через<br>MCP-клиент</p></div><div class="arrow">→</div><div class="panel"><h3>Запрос к модели</h3><p>Содержит текст ресурса</p></div></div><p class="takeaway">URI — адрес ресурса в MCP. Клиент читает course://overview, а хост добавляет полученное описание курса в запрос к модели.</p>
 
 <!-- Раздел блокнота: § 2, 6 -->
 
@@ -87,7 +87,7 @@ section: '§ 2, 6'
 
 # MCP: получение шаблона промпта
 
-<div class="grid2"><div class="panel"><h3>Аргументы</h3><p><code>topic_name="mcp"</code><br><br><code>audience="студенты"</code></p></div><div class="panel"><h3>Результат сервера</h3><p>«Подготовь справку по MCP для студентов; укажи назначение и пример применения»</p></div></div><p class="takeaway">Сервер подставляет тему и аудиторию в шаблон. Для получения ответа приложение отдельно вызывает модель с этими сообщениями.</p>
+<div class="grid2"><div class="panel"><h3>Аргументы</h3><p><code>topic_name="mcp"</code><br><br><code>audience="студенты"</code></p></div><div class="panel"><h3>Результат сервера</h3><p>«Подготовь справку по MCP для студентов; укажи назначение и пример применения»</p></div></div><p class="takeaway">Сервер подставляет тему и аудиторию в шаблон. Для получения ответа хост отдельно вызывает модель с этими сообщениями.</p>
 
 <!-- Раздел блокнота: § 2, 6 -->
 
@@ -98,7 +98,7 @@ section: '§ 6'
 
 # MCP: ресурс и промпт в запросе к модели
 
-<p class="lead">Приложение собирает контекст: описание курса из resource, задачу из prompt и инструменты для чтения файлов.</p><div class="figure"><img class="diagram" src="/diagrams/context.svg" /></div>
+<p class="lead">Хост (приложение) собирает контекст: описание курса из resource, задачу из prompt и инструменты для чтения файлов.</p><div class="figure"><img class="diagram" src="/diagrams/context.svg" /></div>
 
 <!-- Раздел блокнота: § 6 -->
 
@@ -136,7 +136,7 @@ section: '§ 3'
 
 # MCP: сервер запрашивает недостающие данные
 
-<div class="flow"><div class="panel"><h3>Сервер</h3><p>input_required:<br>нужен ввод пользователя</p></div><div class="arrow">→</div><div class="panel"><h3>Приложение</h3><p>Показывает вопрос<br>и получает ответ</p></div><div class="arrow">→</div><div class="panel"><h3>Повтор запроса</h3><p>inputResponses:<br>передаёт ответ серверу</p></div></div><p class="takeaway">Так устроен многошаговый обмен MRTR: приложение получает недостающий ввод и повторяет вызов инструмента.</p>
+<div class="flow"><div class="panel"><h3>Сервер</h3><p>input_required:<br>нужен ввод пользователя</p></div><div class="arrow">→</div><div class="panel"><h3>Хост</h3><p>Показывает вопрос<br>и получает ответ</p></div><div class="arrow">→</div><div class="panel"><h3>Повтор запроса</h3><p>inputResponses:<br>передаёт ответ серверу</p></div></div><p class="takeaway">Так устроен многошаговый обмен MRTR: приложение получает недостающий ввод и повторяет вызов инструмента.</p>
 
 <!-- Раздел блокнота: § 3 -->
 
@@ -229,14 +229,14 @@ section: '§ 5'
 
 
 ---
-section: '§ 5.1'
+section: '§ 5–7'
 ---
 
-# MCP по stdio: запуск сервера из клиента
+# MCP: транспорты stdio и Streamable HTTP
 
-<div class="flow"><div class="panel"><h3>MCP-клиент</h3><p>Запускает Python</p></div><div class="arrow">→</div><div class="panel"><h3>stdin / stdout</h3><p>Сообщения JSON-RPC</p></div><div class="arrow">→</div><div class="panel"><h3>Сервер</h3><p>Читает учебные файлы</p></div></div><p class="takeaway">stdin и stdout — потоки ввода и вывода процесса. Клиент обменивается с сервером JSON-RPC и завершает его при выходе из async with.</p>
+<div class="grid2"><div class="panel"><h3>stdio</h3><p>Хост через клиент запускает сервер как дочерний процесс.<br><br>JSON-RPC передаётся через stdin/stdout; журнал — через stderr.</p></div><div class="panel"><h3>Streamable HTTP</h3><p>Клиент обращается к отдельному серверу по URL /mcp: локально или по сети.<br><br>Ответ — JSON или поток SSE.</p></div></div><p class="takeaway">Меняется способ доставки сообщений, а tools, resources и prompts остаются теми же. В § 5 используем stdio, в § 7 — HTTP.</p>
 
-<!-- Раздел блокнота: § 5.1 -->
+<!-- Раздел блокнота: § 5–7 -->
 
 
 ---
@@ -256,7 +256,7 @@ section: '§ 7'
 
 # MCP по HTTP: запрос и ответ
 
-<p class="lead">Запускаем сервер учебных материалов по Streamable HTTP. В блокноте смотрим отправленный запрос и ответ.</p><div class="grid2"><div class="panel"><h3>Запрос</h3><p>Метод tools/call<br>Аргументы операции<br>Версия и возможности в _meta</p></div><div class="panel"><h3>Ответ</h3><p>Результат операции<br>resultType: тип результата<br>Сведения о сервере</p></div></div><p class="takeaway">SSE — поток сообщений внутри HTTP-ответа. Streamable HTTP поддерживает такой ответ; запросы при этом остаются сообщениями MCP.</p>
+<p class="lead">Запускаем сервер учебных материалов по Streamable HTTP. В блокноте смотрим отправленный запрос и ответ.</p><div class="grid2"><div class="panel"><h3>Запрос</h3><p>Метод tools/call<br>Аргументы операции<br>Версия и возможности в _meta</p></div><div class="panel"><h3>Ответ</h3><p>Результат операции<br>resultType: тип результата<br>Сведения о сервере</p></div></div><p class="takeaway">SSE передаёт сообщения потоком в HTTP-ответе. Streamable HTTP заменил старый транспорт HTTP+SSE; поддержка SSE в новом транспорте сохраняется.</p>
 
 <!-- Раздел блокнота: § 7 -->
 

@@ -16,6 +16,6 @@
 <text x="745.0" y="51" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Tools</text>
 <text x="745.0" y="81" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Чтение файлов</text>
 <rect x="325" y="200" width="230" height="90" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
-<text x="440.0" y="236" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Host</text>
+<text x="440.0" y="236" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Хост</text>
 <text x="440.0" y="266" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Собирает сообщения</text>
 </svg>
