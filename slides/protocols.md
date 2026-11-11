@@ -546,9 +546,9 @@ section: '§ 17'
 section: 'ДЗ'
 ---
 
-# Домашнее задание: расширить MCP-сервер
+# Домашнее задание: RAG и MCP
 
-<div class="grid2"><div class="panel"><h3>Реализовать</h3><p>Инструмент подсчёта файлов<br>Ресурс статистики<br>Промпт обзора для аудитории</p></div><div class="panel"><h3>Проверить и сдать</h3><p>Три списка MCP и прямые вызовы<br>Вызов инструмента агентом<br>Сервер + homework.ipynb</p></div></div><p class="takeaway">Условия и критерии: HOMEWORK.md. Дополнительно — опубликовать агента по A2A.</p>
+<div class="grid2"><div class="panel"><h3>Собрать</h3><p>Свой корпус → фрагменты → индекс<br>Готовый MCP-сервер поиска<br>Агент возвращает top-k и источники</p></div><div class="panel"><h3>Проверить и сдать</h3><p>15–20 запросов и ручная оценка<br>document_id, chunk_id, source<br>Код, конфигурация и инструкция запуска</p></div></div><p class="takeaway">Полные условия и критерии: <a href="https://github.com/trashchenkov/mipt_protocols/blob/main/homework_mcp_knowledge_base.pdf">PDF задания в репозитории</a>. Генерация ответа по фрагментам — по желанию.</p>
 
 <!-- Раздел блокнота: ДЗ -->
 
