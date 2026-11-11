@@ -413,9 +413,9 @@ section: '§ 11.1'
 section: '§ 11.2'
 ---
 
-# A2A: совместимость клиента и сервера
+# A2A: как клиент читает ответ
 
-<div class="grid2"><div class="panel"><h3>Наблюдение</h3><p>Клиент a2a-sdk с protobuf-моделями отклоняет дополнительное поле kind в ответе Agent Server</p></div><div class="panel"><h3>Учебный клиент</h3><p>JSON-RPC через HTTP<br>Статус задачи и текст из artifacts</p></div></div><p class="takeaway">Поэтому в блокноте используем JSON-RPC-клиент, который принимает ответы обоих серверов.</p>
+<div class="grid2"><div class="panel"><h3>Запрос</h3><p>Адрес из Agent Card<br>Метод SendMessage<br>Сообщение пользователя</p></div><div class="panel"><h3>Ответ</h3><p>Идентификатор задачи<br>Статус выполнения<br>Текст в artifacts</p></div></div><p class="takeaway">Найдите эти поля в JSON-ответах обоих серверов. Клиент lab.ask_a2a использует их для чтения результата.</p>
 
 <!-- Раздел блокнота: § 11.2 -->
 

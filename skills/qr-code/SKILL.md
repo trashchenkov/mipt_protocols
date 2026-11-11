@@ -5,7 +5,6 @@ metadata:
   author: Omar Khaleel
   source: https://github.com/clawdbot/skills/commit/83ed041823a519389b090c24c6cfc9c7b7b89177
   upstream-version: "1.0.0"
-  adaptation: Учебные инструкции и обнаружение ZBar на macOS.
 ---
 
 # Создание и чтение QR-кодов
@@ -60,4 +59,3 @@ metadata:
 ## Источник
 
 Python-скрипты Omar Khaleel содержат указание лицензии MIT. Исходный коммит приведён в поле `metadata.source`.
-В учебной версии изменены инструкции, расположение скриптов и обнаружение ZBar на macOS.
