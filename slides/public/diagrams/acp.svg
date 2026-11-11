@@ -8,8 +8,8 @@
 <rect x="576.0" y="45" width="68" height="29" rx="8" fill="#071a33"/><text x="610" y="65" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">файлы</text>
 <rect x="20" y="90" width="230" height="125" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
 <text x="135.0" y="126" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Клиент</text>
-<text x="135.0" y="156" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Редактор или</text>
-<text x="135.0" y="181" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">ячейка блокнота</text>
+<text x="135.0" y="156" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Редактор, терминал</text>
+<text x="135.0" y="181" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">веб-клиент, блокнот</text>
 <rect x="340" y="90" width="230" height="125" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
 <text x="455.0" y="126" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Процесс агента</text>
 <text x="455.0" y="156" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Deep Agents</text>
