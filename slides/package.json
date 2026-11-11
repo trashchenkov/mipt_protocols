@@ -1,0 +1,16 @@
+{
+  "name": "mipt-protocols-slides",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev protocols.md --open",
+    "build": "slidev build protocols.md --out dist",
+    "export": "slidev export protocols.md --output protocols.pdf"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.12.0",
+    "@slidev/theme-default": "^0.25.0",
+    "playwright-chromium": "^1.63.0",
+    "vite": "^7.3.1"
+  }
+}

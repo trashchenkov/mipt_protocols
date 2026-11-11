@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#56ff71"/></marker></defs>
+<path d="M135,100 L325,225" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="181.0" y="131.5" width="98" height="29" rx="8" fill="#071a33"/><text x="230.0" y="151.5" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">контекст</text>
+<path d="M440,100 L440,200" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="386.0" y="119.0" width="108" height="29" rx="8" fill="#071a33"/><text x="440.0" y="139.0" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">сообщения</text>
+<path d="M745,100 L555,225" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="571.0" y="131.5" width="158" height="29" rx="8" fill="#071a33"/><text x="650.0" y="151.5" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">описания tools</text>
+<rect x="20" y="15" width="230" height="85" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="135.0" y="51" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Resource</text>
+<text x="135.0" y="81" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Описание курса</text>
+<rect x="325" y="15" width="230" height="85" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="440.0" y="51" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Prompt</text>
+<text x="440.0" y="81" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Тема и аудитория</text>
+<rect x="630" y="15" width="230" height="85" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="745.0" y="51" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Tools</text>
+<text x="745.0" y="81" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Чтение файлов</text>
+<rect x="325" y="200" width="230" height="90" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="440.0" y="236" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Host</text>
+<text x="440.0" y="266" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Собирает сообщения</text>
+</svg>

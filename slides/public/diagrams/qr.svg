@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#56ff71"/></marker></defs>
+<path d="M200,155 L240,155" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<path d="M425,155 L465,155" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<path d="M650,155 L690,155" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="15" y="100" width="185" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="107.5" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Строка</text>
+<text x="107.5" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Исходные данные</text>
+<rect x="240" y="100" width="185" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="332.5" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Генератор</text>
+<text x="332.5" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Создаёт PNG</text>
+<rect x="465" y="100" width="185" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="557.5" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Декодер</text>
+<text x="557.5" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Читает QR</text>
+<rect x="690" y="100" width="175" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="777.5" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Проверка</text>
+<text x="777.5" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Строки равны</text>
+</svg>

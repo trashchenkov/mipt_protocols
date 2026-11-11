@@ -1,0 +1,4 @@
+{
+  "dependencies": ["."],
+  "graphs": {"travel": "./servers/agent_server.py:graph"}
+}

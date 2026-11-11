@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#56ff71"/></marker></defs>
+<path d="M240,150 L330,150" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<path d="M560,150 L650,150" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="556.0" y="119.0" width="98" height="29" rx="8" fill="#071a33"/><text x="605.0" y="139.0" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">рендерер</text>
+<rect x="20" y="100" width="220" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="130.0" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Агент</text>
+<text x="130.0" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Выбирает компоненты</text>
+<rect x="330" y="100" width="230" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="445.0" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">A2UI JSON</text>
+<text x="445.0" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Card, Text, Row</text>
+<rect x="650" y="100" width="210" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="755.0" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Клиент</text>
+<text x="755.0" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Рисует карточку</text>
+</svg>

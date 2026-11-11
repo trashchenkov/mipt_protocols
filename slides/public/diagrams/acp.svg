@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#56ff71"/></marker></defs>
+<path d="M250,120 L340,120" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="221.0" y="45" width="148" height="29" rx="8" fill="#071a33"/><text x="295" y="65" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">stdin: запрос</text>
+<path d="M340,195 L250,195" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="206.0" y="235" width="178" height="29" rx="8" fill="#071a33"/><text x="295" y="255" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">stdout: JSON-RPC</text>
+<path d="M570,150 L650,150" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="576.0" y="45" width="68" height="29" rx="8" fill="#071a33"/><text x="610" y="65" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">файлы</text>
+<rect x="20" y="90" width="230" height="125" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="135.0" y="126" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Клиент</text>
+<text x="135.0" y="156" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Редактор или</text>
+<text x="135.0" y="181" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">ячейка ноутбука</text>
+<rect x="340" y="90" width="230" height="125" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="455.0" y="126" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Deep Agent</text>
+<text x="455.0" y="156" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Агентный процесс</text>
+<text x="455.0" y="181" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">+ GigaChat</text>
+<rect x="650" y="90" width="210" height="125" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="755.0" y="126" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Рабочая папка</text>
+<text x="755.0" y="156" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Файлы и контекст</text>
+</svg>

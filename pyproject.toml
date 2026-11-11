@@ -1,0 +1,36 @@
+[project]
+name = "mipt-protocols"
+version = "0.1.0"
+requires-python = "==3.12.*"
+dependencies = [
+    "deepagents==0.7.32",
+    "deepagents-gigachat==0.0.4",
+    "langchain[mcp]==1.4.7",
+    "langgraph==1.2.18",
+    "langchain-gigachat==0.5.2a1",
+    "gigachat==0.2.4a1",
+    "mcp==2.3.0",
+    "fastmcp==4.1.4",
+    "a2a-sdk[http-server]==1.2.3",
+    "deepagents-acp==0.0.13",
+    "agent-client-protocol==0.12.1",
+    "langgraph-cli[inmem]==0.4.40",
+    "langgraph-api==0.16.9",
+    "langgraph-runtime-inmem==0.36.9",
+    "ag-ui-protocol==1.0.0",
+    "ag-ui-langgraph==0.0.47",
+    "python-dotenv",
+    "uvicorn",
+    "httpx",
+    "fastapi==0.162.0",
+    "jupyterlab==4.4.7",
+    "ipykernel==6.30.1",
+    "nbformat==5.10.4",
+    "nbclient==0.10.4",
+    "qrcode==8.2",
+    "pillow==11.3.0",
+    "pyzbar==0.1.9",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,10 @@
+.env
+.venv/
+.runtime/
+.langgraph_api/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.log
+slides/node_modules/
+slides/dist/
