@@ -25,8 +25,8 @@ def main(qr=False):
         with tempfile.TemporaryDirectory() as directory:
             image = str(Path(directory) / "qr.png")
             original = "https://example.com/mipt-protocols"
-            subprocess.run([sys.executable, str(ROOT / "skills/qr-code/qr_generate.py"), original, image], check=True)
-            read = subprocess.run([sys.executable, str(ROOT / "skills/qr-code/qr_read.py"), image],
+            subprocess.run([sys.executable, str(ROOT / "skills/qr-code/scripts/qr_generate.py"), original, image], check=True)
+            read = subprocess.run([sys.executable, str(ROOT / "skills/qr-code/scripts/qr_read.py"), image],
                                   check=True, capture_output=True, text=True, encoding="utf-8")
             assert read.stdout.strip() == original
             print("QR: генерация и обратное чтение прошли")

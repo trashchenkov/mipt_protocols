@@ -1,86 +1,63 @@
 ---
 name: qr-code
-description: Generate and read QR codes. Use when the user wants to create a QR code from text/URL, or decode/read a QR code from an image file. Supports PNG/JPG output and can read QR codes from screenshots or image files.
+description: Создание QR-кода из текста или URL и чтение QR-кода из изображения. Используйте, когда нужно сохранить QR-код в PNG, декодировать изображение или проверить, что оно содержит исходную строку.
+metadata:
+  author: Omar Khaleel
+  source: https://github.com/clawdbot/skills/commit/83ed041823a519389b090c24c6cfc9c7b7b89177
+  upstream-version: "1.0.0"
+  adaptation: Учебные инструкции и обнаружение ZBar на macOS.
 ---
 
-# QR Code
+# Создание и чтение QR-кодов
 
-Generate QR codes from text/URLs and decode QR codes from images.
+## Файлы навыка
 
-## Capabilities
+- `scripts/qr_generate.py` — генератор PNG с настройкой размера, полей и коррекции ошибок.
+- `scripts/qr_read.py` — декодер изображения, печатающий найденный текст в stdout.
 
-- Generate QR codes from any text, URL, or data
-- Customize QR code size and error correction level
-- Save as PNG or display in terminal
-- Read/decode QR codes from image files (PNG, JPG, etc.)
-- Read QR codes from screenshots
+Пути `scripts/...` отсчитываются от папки этого `SKILL.md`. Определите её по пути прочитанного файла;
+в командах ниже замените `<skill_dir>` на этот путь. Используйте Python окружения с установленными зависимостями.
+Выходное изображение сохраняйте в рабочую папку задачи.
 
-## Requirements
+## Порядок выполнения
 
-Install Python dependencies:
+1. Возьмите точную строку или URL из запроса. Если содержимое не задано, уточните его.
+2. Создайте изображение:
 
-### For Generation
+   ```bash
+   python "<skill_dir>/scripts/qr_generate.py" "https://example.com" result.png
+   ```
 
-```bash
-pip install qrcode pillow
-```
+   Замените пример URL на строку пользователя. При запуске через Python передавайте аргументы списком,
+   чтобы пробелы и символы оболочки не меняли содержимое.
+3. Прочитайте созданное изображение:
 
-### For Reading
+   ```bash
+   python "<skill_dir>/scripts/qr_read.py" result.png
+   ```
 
-```bash
-pip install pillow pyzbar
-```
+4. Сравните stdout декодера с исходной строкой посимвольно. Завершайте задачу после совпадения.
+   В ответе укажите путь к изображению и результат проверки.
 
-On Windows, pyzbar requires Visual C++ Redistributable.
-On macOS: `brew install zbar`
-On Linux: `apt install libzbar0`
+Если пользователь просит только прочитать готовый QR-код, выполните шаг 3 с его файлом и верните декодированный текст.
 
-## Generate QR Code
+## Параметры генератора
 
-```bash
-python skills/qr-code/qr_generate.py "https://example.com" output.png
-```
+`--size` — размер модуля в пикселях (10 по умолчанию); `--border` — ширина белого поля в модулях (4);
+`--error` — уровень коррекции ошибок L, M, Q или H (M).
 
-Options:
+## Зависимости и ошибки
 
-- `--size`: Box size in pixels (default: 10)
-- `--border`: Border size in boxes (default: 4)
-- `--error`: Error correction level L/M/Q/H (default: M)
+Генератор использует `qrcode` и `Pillow`, декодер — `Pillow` и `pyzbar`.
+В учебном репозитории эти Python-пакеты устанавливает `uv sync`.
+В Windows x64 библиотека ZBar входит в wheel pyzbar; ошибка загрузки DLL может потребовать Visual C++ Runtime 2013 x64.
+В macOS нужна `brew install zbar`, в Debian/Ubuntu — `sudo apt-get install libzbar0`.
+Декодер на macOS сам добавляет пути библиотек Homebrew.
 
-Example with options:
+Если скрипт завершился с ошибкой, сообщите её текст и этап проверки. При отсутствии ZBar изображение
+можно сгенерировать, но результат обратного чтения остаётся непроверенным.
 
-```bash
-python skills/qr-code/qr_generate.py "Hello World" hello.png --size 15 --border 2
-```
+## Источник
 
-## Read QR Code
-
-```bash
-python skills/qr-code/qr_read.py image.png
-```
-
-Returns the decoded text/URL from the QR code.
-
-## Quick Examples
-
-Generate QR for a URL:
-
-```python
-import qrcode
-img = qrcode.make("https://openclaw.ai")
-img.save("openclaw.png")
-```
-
-Read QR from image:
-
-```python
-from pyzbar.pyzbar import decode
-from PIL import Image
-data = decode(Image.open("qr.png"))
-print(data[0].data.decode())
-```
-
-## Scripts
-
-- `skills/qr-code/qr_generate.py` - Generate QR codes with customization options
-- `skills/qr-code/qr_read.py` - Decode QR codes from image files
+Python-скрипты Omar Khaleel содержат указание лицензии MIT. Исходный коммит приведён в поле `metadata.source`.
+В учебной версии изменены инструкции, расположение скриптов и обнаружение ZBar на macOS.

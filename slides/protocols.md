@@ -543,6 +543,17 @@ section: '§ 17'
 
 
 ---
+section: 'ДЗ'
+---
+
+# Домашнее задание: расширить MCP-сервер
+
+<div class="grid2"><div class="panel"><h3>Реализовать</h3><p>Инструмент подсчёта файлов<br>Ресурс статистики<br>Промпт обзора для аудитории</p></div><div class="panel"><h3>Проверить и сдать</h3><p>Три списка MCP и прямые вызовы<br>Вызов инструмента агентом<br>Сервер + homework.ipynb</p></div></div><p class="takeaway">Условия и критерии: HOMEWORK.md. Дополнительно — опубликовать агента по A2A.</p>
+
+<!-- Раздел блокнота: ДЗ -->
+
+
+---
 layout: corporate-section-bg
 section: '§ 18'
 ---
@@ -560,7 +571,7 @@ section: '§ 18'
 
 # Skills: содержимое папки навыка
 
-<div class="grid2"><div class="panel"><h3>SKILL.md</h3><p>Имя и описание<br>Процедура выполнения<br>Требования</p></div><div class="panel"><h3>Файлы</h3><p>qr_generate.py<br>qr_read.py<br>Автор и версия навыка</p></div></div><p class="takeaway">По имени и описанию агент выбирает навык, читает SKILL.md и выполняет указанные шаги.</p>
+<div class="grid2"><div class="panel"><h3>SKILL.md</h3><p>name: qr-code — имя папки<br>Описание и инструкция<br>Автор и источник в metadata</p></div><div class="panel"><h3>Файлы</h3><p>scripts/qr_generate.py<br>scripts/qr_read.py</p></div></div><p class="takeaway">По имени и описанию агент выбирает навык, читает SKILL.md и выполняет указанные шаги.</p>
 
 <!-- Раздел блокнота: § 18 -->
 
