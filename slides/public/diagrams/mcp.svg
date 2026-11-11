@@ -1,18 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310">
-<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#56ff71"/></marker></defs>
-<path d="M220,150 L270,150" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
-<path d="M600,130 L660,130" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
-<rect x="571.0" y="45" width="118" height="29" rx="8" fill="#071a33"/><text x="630" y="65" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">tools/call</text>
-<path d="M660,190 L600,190" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
-<rect x="576.0" y="245" width="108" height="29" rx="8" fill="#071a33"/><text x="630" y="265" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">результат</text>
-<rect x="15" y="100" width="205" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
-<text x="117.5" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Пользователь</text>
-<text x="117.5" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Запрос о поездке</text>
-<rect x="270" y="85" width="330" height="140" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
-<text x="435.0" y="121" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Хост (приложение)</text>
-<text x="435.0" y="151" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Агент выбирает действие</text>
-<text x="435.0" y="176" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">MCP-клиент ведёт обмен</text>
-<rect x="660" y="100" width="210" height="110" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
-<text x="765.0" y="136" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">MCP-сервер</text>
-<text x="765.0" y="166" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Поиск Туту</text>
-</svg>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#56ff71"/></marker></defs>
+<rect x="15" y="15" width="580" height="280" rx="20" fill="#071a33" fill-opacity="0.65" stroke="#62ecff" stroke-width="2"/>
+<g font-family="sans-serif" text-anchor="middle">
+<text x="305" y="53" fill="#56ff71" font-size="26" font-weight="600">Хост (приложение)</text>
+<rect x="40" y="100" width="230" height="110" rx="16" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="155" y="136" fill="#56ff71" font-size="24" font-weight="600">Агент</text>
+<text x="155" y="167" fill="white" font-size="19">Выбирает инструмент</text>
+<text x="155" y="192" fill="white" font-size="19">и аргументы</text>
+<rect x="350" y="100" width="220" height="110" rx="16" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="460" y="136" fill="#56ff71" font-size="24" font-weight="600">MCP-клиент</text>
+<text x="460" y="167" fill="white" font-size="19">Отправляет запрос</text>
+<text x="460" y="192" fill="white" font-size="19">и получает результат</text>
+<rect x="680" y="100" width="190" height="110" rx="16" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="775" y="136" fill="#56ff71" font-size="24" font-weight="600">MCP-сервер</text>
+<text x="775" y="167" fill="white" font-size="19">Выполняет</text>
+<text x="775" y="192" fill="white" font-size="19">инструмент</text>
+<text x="305" y="259" fill="white" font-size="19">Код хоста связывает агента и MCP-клиент</text>
+<text x="628" y="88" fill="#bafffb" font-size="17">tools/call</text>
+<text x="633" y="239" fill="#bafffb" font-size="17">результат</text>
+</g>
+<g stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)">
+<path d="M270,135 L350,135"/><path d="M350,180 L270,180"/>
+<path d="M570,135 L680,135"/><path d="M680,180 L570,180"/>
+</g></svg>

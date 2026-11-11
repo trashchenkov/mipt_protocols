@@ -65,7 +65,7 @@ section: '§ 2'
 
 # MCP: как вызывается инструмент
 
-<div class="flow"><div class="panel"><h3>Агент</h3><p>Выбирает инструмент<br>и задаёт аргументы</p></div><div class="arrow">→</div><div class="panel"><h3>Хост</h3><p>Через MCP-клиент<br>отправляет запрос</p></div><div class="arrow">→</div><div class="panel"><h3>MCP-сервер</h3><p>Выполняет операцию</p></div></div><p class="takeaway">ToolMessage — сообщение LangChain с результатом инструмента. Оно входит в историю, которую модель получает на следующем шаге.</p>
+<div class="figure"><img class="diagram" src="/diagrams/mcp.svg" /></div><p class="takeaway">Хост передаёт выбранный агентом вызов MCP-клиенту, а результат возвращает агенту как ToolMessage. Агент продолжает решение задачи с полученными данными.</p>
 
 <!-- Раздел блокнота: § 2 -->
 
@@ -267,7 +267,7 @@ section: '§ 8'
 
 # MCP: один агент с Туту и ВкусВиллом
 
-<div class="figure"><img class="diagram" src="/diagrams/dualmcp.svg" /></div><p class="takeaway">Один Deep Agent получает инструменты обоих MCP-серверов и выбирает вызовы для поиска поезда и продуктов.</p>
+<div class="figure"><img class="diagram" src="/diagrams/dualmcp.svg" /></div><p class="takeaway">В одном хосте Deep Agent использует два MCP-клиента: один для сервера Туту, другой — для ВкусВилла. Агент выбирает инструменты для поездки и перекуса.</p>
 
 <!-- Раздел блокнота: § 8 -->
 
