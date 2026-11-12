@@ -1,21 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310">
 <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#56ff71"/></marker></defs>
-<path d="M255,130 L330,70" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
-<rect x="263.5" y="69.0" width="58" height="29" rx="8" fill="#071a33"/><text x="292.5" y="89.0" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">A2A</text>
-<path d="M580,65 L650,65" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
-<rect x="586.0" y="34.0" width="58" height="29" rx="8" fill="#071a33"/><text x="615.0" y="54.0" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">MCP</text>
-<path d="M255,185 L330,240" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
-<rect x="263.5" y="181.5" width="58" height="29" rx="8" fill="#071a33"/><text x="292.5" y="201.5" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">MCP</text>
-<rect x="15" y="105" width="240" height="105" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
-<text x="135.0" y="141" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Координатор</text>
-<text x="135.0" y="171" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">План поездки</text>
-<rect x="330" y="15" width="250" height="105" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
-<text x="455.0" y="51" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Агент поездок</text>
-<text x="455.0" y="81" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Своя модель и MCP</text>
-<rect x="650" y="15" width="210" height="105" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
-<text x="755.0" y="51" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Туту</text>
-<text x="755.0" y="81" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Поиск билетов</text>
-<rect x="330" y="190" width="250" height="105" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
-<text x="455.0" y="226" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">ВкусВилл</text>
-<text x="455.0" y="256" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Поиск продуктов</text>
+<path d="M325,60 L510,60" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="378.0" y="23" width="78" height="29" rx="8" fill="#071a33"/><text x="417" y="43" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">задача</text>
+<path d="M510,115 L325,115" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="363.0" y="138" width="108" height="29" rx="8" fill="#071a33"/><text x="417" y="158" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">результат</text>
+<path d="M170,140 L170,215" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="191.0" y="166" width="58" height="29" rx="8" fill="#071a33"/><text x="220" y="186" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">MCP</text>
+<path d="M685,140 L685,215" stroke="#56ff71" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="706.0" y="166" width="58" height="29" rx="8" fill="#071a33"/><text x="735" y="186" fill="#bafffb" font-family="sans-serif" font-size="18" text-anchor="middle">MCP</text>
+<rect x="15" y="20" width="310" height="120" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="170.0" y="56" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">Координатор</text>
+<text x="170.0" y="86" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">A2A-клиент</text>
+<text x="170.0" y="111" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Модель и инструменты</text>
+<rect x="510" y="20" width="350" height="120" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="685.0" y="56" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">A2A-сервер</text>
+<text x="685.0" y="86" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Агент поездок</text>
+<text x="685.0" y="111" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Модель и MCP-клиент</text>
+<rect x="15" y="215" width="310" height="90" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="170.0" y="251" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">MCP ВкусВилла</text>
+<text x="170.0" y="281" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Поиск продуктов</text>
+<rect x="510" y="215" width="350" height="90" rx="18" fill="#071a33" stroke="#62ecff" stroke-width="2"/>
+<text x="685.0" y="251" text-anchor="middle" fill="#56ff71" font-family="sans-serif" font-size="24" font-weight="600">MCP Туту</text>
+<text x="685.0" y="281" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19">Поиск поездов</text>
 </svg>
