@@ -142,14 +142,19 @@ section: '§ 3'
 
 
 ---
-section: '§ 3, 5'
+section: '§ 3.4, 5.1'
 ---
 
 # MCP Python SDK: переход с v1 на v2
 
-<div class="grid2"><div class="panel"><h3>Сервер</h3><p><code>mcp.server.fastmcp.FastMCP</code><br>↓<br><code>mcp.server.MCPServer</code><br><br>Транспорт задаётся в run()</p></div><div class="panel"><h3>Клиент</h3><p><code>from mcp import Client</code><br><br>async with сохраняет соединение до выхода из блока</p></div></div><p class="takeaway">Здесь меняется API официального Python SDK. Отдельная библиотека FastMCP используется адаптером LangChain.</p>
+| Сторона / действие | SDK v1 | SDK v2 |
+|---|---|---|
+| Сервер: основной класс | `FastMCP` | `MCPServer` |
+| Клиент: подключение | Открыть транспорт → `ClientSession`<br>→ `await session.initialize()` | `async with Client(url) as client:`<br>или `Client(params)` для stdio |
+| Клиент: каталог инструментов | `await session.list_tools()` | `await client.list_tools()` |
+<p class="takeaway">В v2 Client открывает транспорт и выбирает совместимую редакцию протокола. ClientSession остаётся низкоуровневым API.</p>
 
-<!-- Раздел блокнота: § 3, 5 -->
+<!-- Раздел блокнота: § 3.4, 5.1 -->
 
 
 ---
