@@ -370,9 +370,9 @@ section: '§ 9–12'
 section: '§ 10'
 ---
 
-# A2A: обработчик и логика агента
+# A2A: протокол и реализация сервера
 
-<div class="flow"><div class="panel"><h3>SendMessage</h3><p>Текст задачи<br>в сообщении A2A</p></div><div class="arrow">→</div><div class="panel"><h3>AgentExecutor</h3><p>Передаёт текст агенту<br>как сообщение user</p></div><div class="arrow">→</div><div class="panel"><h3>Агент поездок</h3><p>Вызывает модель<br>и инструменты Туту</p></div></div><p class="takeaway">В примере агент не обрабатывает A2A. Обработчик запускает его, оформляет ответ как artifact и обновляет состояние задачи.</p>
+<div class="grid2"><div class="panel"><h3>Что задаёт протокол</h3><p>Сервер принимает сообщения<br>и возвращает Message или Task,<br>состояние и результаты.<br><br>Внутренний цикл работы агента<br>протокол не определяет.</p></div><div class="panel"><h3>Как устроен наш сервер</h3><p>AgentExecutor передаёт текст<br>агенту поездок на сервере<br>как сообщение user.<br><br>Ответ оформляет как artifact<br>и завершает Task.</p></div></div><p class="takeaway">AgentExecutor — класс Python SDK. Отдельный обработчик и передача текста как user внутри агента не являются требованиями A2A.</p>
 
 <!-- Раздел блокнота: § 10 -->
 
