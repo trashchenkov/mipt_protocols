@@ -519,6 +519,17 @@ section: '§ 15.1–15.2'
 
 
 ---
+section: '§ 15'
+---
+
+# ACP: приложения и библиотеки
+
+<div class="grid3"><div class="panel"><h3>Готовая поддержка</h3><p>Zed: Agent Panel<br><br>IDE JetBrains:<br>AI Assistant</p></div><div class="panel"><h3>Через расширения</h3><p>VS Code: ACP Client<br>Neovim: CodeCompanion<br>Emacs: agent-shell<br>Obsidian: Agent Client</p></div><div class="panel"><h3>В браузере</h3><p>Chrome ACP:<br>расширение или веб-клиент<br>↓ WebSocket<br>прокси → ACP-агент</p></div></div><p class="takeaway">Для своего приложения есть SDK клиента и агента. Интерфейс и обработку разрешений пишет разработчик. В блокноте — минимальный клиент на JSON-RPC. Примеры: ноябрь 2026; ссылки — в § 15.</p>
+
+<!-- Раздел блокнота: § 15 -->
+
+
+---
 section: '§ 16'
 ---
 
