@@ -43,6 +43,7 @@ section: '§ 1'
 
 # MCP: хост, клиент и сервер
 
+<p class="protocol-origin">Инициатор: Anthropic. Сейчас: проект в Agentic AI Foundation (AAIF) при Linux Foundation.</p>
 <p class="lead">Хост (приложение) запускает агента и создаёт MCP-клиент для каждого сервера. Агент выбирает действие; клиент передаёт запрос и получает результат.</p><div class="figure"><img class="diagram" src="/diagrams/mcp.svg" /></div>
 
 <!-- Раздел блокнота: § 1 -->
@@ -294,6 +295,7 @@ section: '§ 8.2'
 
 # MCP и OAuth: доступ к личным данным
 
+<p class="protocol-origin">OAuth 2.0 и PKCE: стандарты IETF; развитие — рабочая группа OAuth.</p>
 <div class="flow"><div class="panel"><h3>Приложение</h3><p>Открывает страницу<br>входа и разрешений</p></div><div class="arrow">→</div><div class="panel"><h3>Пользователь</h3><p>Подтверждает доступ</p></div><div class="arrow">→</div><div class="panel"><h3>Сервис</h3><p>Выдаёт токен<br>доступа</p></div></div><p class="takeaway">OAuth позволяет пользователю разрешить приложению доступ и получить токен. В блокноте используются публичные операции без входа в личный кабинет.</p>
 
 <!-- Раздел блокнота: § 8.2 -->
@@ -328,6 +330,7 @@ section: '§ 9, 12'
 
 # A2A: координатор и агент поездок
 
+<p class="protocol-origin">Инициатор: Google. Развитие: проект A2A в AAIF при Linux Foundation.</p>
 <div class="figure"><img class="diagram" src="/diagrams/a2a.svg" /></div><p class="takeaway">Координатор обращается через A2A-клиент. A2A-сервер запускает агента поездок и возвращает результат. У каждого агента свои инструменты.</p>
 
 <!-- Раздел блокнота: § 9, 12 -->
@@ -446,6 +449,7 @@ section: '§ 13'
 
 # AG-UI: показывать работу агента в приложении
 
+<p class="protocol-origin">Инициатива CopilotKit с LangChain и CrewAI. Развитие: CopilotKit и сообщество AG-UI.</p>
 <p class="lead">Пока агент ищет поезд, приложение показывает ход работы, дописывает ответ и сообщает об ошибках.</p><div class="flow"><div class="panel"><h3>Агент на сервере</h3><p>Вызывает поиск<br>поездов</p></div><div class="arrow">→</div><div class="panel"><h3>Событие AG-UI</h3><p>TOOL_CALL_START</p></div><div class="arrow">→</div><div class="panel"><h3>Приложение</h3><p>Показывает<br>«Ищу поезд…»</p></div></div><p class="takeaway">AG-UI задаёт общий формат запросов и событий между приложением и агентным сервером. Интерфейс можно подключать к разным агентным фреймворкам через совместимые адаптеры.</p>
 
 <!-- Раздел блокнота: § 13 -->
@@ -474,6 +478,7 @@ section: '§ 14'
 
 # A2UI: описание интерфейса
 
+<p class="protocol-origin">Инициатор: Google. Развитие: Google, CopilotKit и открытое сообщество A2UI.</p>
 <div class="figure"><img class="diagram" src="/diagrams/a2ui.svg" /></div><p class="takeaway">A2UI передаёт описание экрана: типы элементов, тексты и связи между ними. Рендерер — код приложения, который строит экран по этому описанию.</p>
 
 <!-- Раздел блокнота: § 14 -->
@@ -496,6 +501,7 @@ section: '§ 15'
 
 # ACP: приложение общается с агентом
 
+<p class="protocol-origin">Запуск: Zed и Google. Развитие: Zed, JetBrains и сообщество ACP.</p>
 <div class="figure"><img class="diagram" src="/diagrams/acp.svg" /></div><p class="takeaway">ACP задаёт интерфейс приложения к агенту. Клиентом может быть IDE, терминальное или веб-приложение. В примере клиент — блокнот, обмен идёт через stdin/stdout.</p>
 
 <!-- Раздел блокнота: § 15 -->
@@ -507,7 +513,7 @@ section: '§ 15'
 
 # ACP: создание сессии и отправка запроса
 
-<div class="flow"><div class="panel"><h3>initialize</h3><p>Версия и возможности</p></div><div class="arrow">→</div><div class="panel"><h3>session/new</h3><p>Создать диалог<br>и задать рабочую папку</p></div><div class="arrow">→</div><div class="panel"><h3>session/prompt</h3><p>Отправить задачу<br>в эту сессию</p></div></div><p class="takeaway">session/update передаёт части ответа; stopReason=end_turn означает завершение. Сообщения JSON-RPC идут в stdout, диагностические сообщения — в stderr.</p>
+<div class="flow"><div class="panel"><h3>initialize</h3><p>Клиент → агент:<br>версия и возможности</p></div><div class="arrow">→</div><div class="panel"><h3>session/new</h3><p>Клиент создаёт сессию<br>и задаёт рабочую папку</p></div><div class="arrow">→</div><div class="panel"><h3>session/prompt</h3><p>Клиент отправляет задачу<br>в эту сессию</p></div></div><p class="takeaway">В ответе initialize агент сообщает выбранную версию и свои возможности. session/update передаёт уведомления агента; stopReason=end_turn — завершение ответа.</p>
 
 <!-- Раздел блокнота: § 15 -->
 
@@ -529,13 +535,13 @@ section: '§ 16'
 
 # Протоколы покупки и оплаты
 
-| Протокол | Назначение |
-|---|---|
-| Agentic Commerce Protocol | Состав, стоимость и оформление заказа между агентом и продавцом |
-| UCP | Поиск товара, корзина, оформление и работа с заказом |
-| AP2 | Подтверждение полномочий агента и согласия пользователя на оплату |
-| x402 | HTTP-ответ 402 с условиями оплаты; повторный запрос с подтверждением |
-<p class="takeaway">Agent Client Protocol и Agentic Commerce Protocol имеют одинаковую аббревиатуру ACP.</p>
+| Протокол | Назначение | Предложили | Развивают |
+|---|---|---|---|
+| Agentic Commerce Protocol | Оформление заказа | OpenAI, Stripe | OpenAI, Stripe и сообщество |
+| UCP | Поиск, корзина, заказ | Google и партнёры, включая Shopify | Google, Shopify и отраслевые партнёры |
+| AP2 | Разрешение на оплату | Google | FIDO Alliance: вклад Google и участников |
+| x402 | Оплата HTTP-доступа | Coinbase | x402 Foundation при Linux Foundation |
+
 
 <!-- Раздел блокнота: § 16 -->
 
@@ -580,6 +586,7 @@ section: '§ 18'
 
 # Skills: содержимое папки навыка
 
+<p class="protocol-origin">Формат Agent Skills предложен Anthropic; развивается как открытый стандарт сообщества.</p>
 <div class="grid2"><div class="panel"><h3>SKILL.md</h3><p>name: qr-code — как имя папки<br>description: когда применять<br>Инструкция: какие шаги выполнить</p></div><div class="panel"><h3>Файлы</h3><p>scripts/qr_generate.py — создать PNG<br>scripts/qr_read.py — прочитать QR</p></div></div><p class="takeaway">По имени и описанию агент выбирает навык, читает SKILL.md и выполняет указанные шаги.</p>
 
 <!-- Раздел блокнота: § 18 -->
