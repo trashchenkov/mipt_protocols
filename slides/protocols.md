@@ -499,23 +499,23 @@ section: '§ 14.1'
 section: '§ 15'
 ---
 
-# ACP: приложение общается с агентом
+# ACP: приложение поручает агенту исправить код
 
 <p class="protocol-origin">Запуск: Zed и Google. Развитие: Zed, JetBrains и сообщество ACP.</p>
-<div class="figure"><img class="diagram" src="/diagrams/acp.svg" /></div><p class="takeaway">ACP задаёт интерфейс приложения к агенту. Клиентом может быть IDE, терминальное или веб-приложение. В примере клиент — блокнот, обмен идёт через stdin/stdout.</p>
+<div class="figure"><img class="diagram" src="/diagrams/acp.svg" /></div><p class="takeaway">Блокнот поручает агенту исправить расчёт стоимости перекуса и запустить тесты. Правка файла и команда выполняются с разрешения пользователя.</p>
 
 <!-- Раздел блокнота: § 15 -->
 
 
 ---
-section: '§ 15'
+section: '§ 15.1–15.2'
 ---
 
-# ACP: создание сессии и отправка запроса
+# ACP: сессия, разрешения и результат
 
-<div class="flow"><div class="panel"><h3>initialize</h3><p>Клиент → агент:<br>версия и возможности</p></div><div class="arrow">→</div><div class="panel"><h3>session/new</h3><p>Клиент создаёт сессию<br>и задаёт рабочую папку</p></div><div class="arrow">→</div><div class="panel"><h3>session/prompt</h3><p>Клиент отправляет задачу<br>в эту сессию</p></div></div><p class="takeaway">В ответе initialize агент сообщает выбранную версию и свои возможности. session/update передаёт уведомления агента; stopReason=end_turn — завершение ответа.</p>
+<p class="lead">initialize: клиент сообщает агенту версию и возможности; агент отвечает выбранной версией и своими возможностями.</p><div class="flow"><div class="panel"><h3>Сессия</h3><p>Анализ → исправление<br>Один sessionId</p></div><div class="arrow">→</div><div class="panel"><h3>Разрешение</h3><p>Клиент подтверждает<br>правку и команду</p></div><div class="arrow">→</div><div class="panel"><h3>Проверка</h3><p>Изменённый модуль<br>Четыре теста: OK</p></div></div><p class="takeaway">session/update показывает ход работы. session/request_permission запрашивает разрешение у клиента. end_turn завершает ответ; правильность исправления проверяем тестами.</p>
 
-<!-- Раздел блокнота: § 15 -->
+<!-- Раздел блокнота: § 15.1–15.2 -->
 
 
 ---
@@ -552,7 +552,7 @@ section: '§ 17'
 
 # Контрольные вопросы
 
-<div class="grid2"><div class="panel"><h3>Инструменты и контекст</h3><p>Кто читает ресурс MCP?<br>Что возвращает промпт MCP?<br>Где выполняется инструмент?</p></div><div class="panel"><h3>Агенты и приложение</h3><p>Кто ищет поездку по A2A?<br>Кто строит экран из A2UI?<br>Как ACP возвращает ответ?</p></div></div>
+<div class="grid2"><div class="panel"><h3>Инструменты и контекст</h3><p>Кто читает ресурс MCP?<br>Что возвращает промпт MCP?<br>Где выполняется инструмент?</p></div><div class="panel"><h3>Агенты и приложение</h3><p>Кто ищет поездку по A2A?<br>Кто строит экран из A2UI?<br>Как ACP-клиент разрешает правку?</p></div></div>
 
 <!-- Раздел блокнота: § 17 -->
 

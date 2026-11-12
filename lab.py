@@ -266,15 +266,18 @@ def preview_a2ui(operations):
 
 
 class ACPClient:
-    """Минимальный stdio-клиент. Popen и поток чтения работают без asyncio subprocess."""
+    """Stdio-клиент: уведомления и решения по session/request_permission."""
 
-    def __init__(self):
+    def __init__(self, *, permission_handler=None, on_update=None):
         if old := SERVERS.pop("acp", None):
             old.stop()
         self.server = LocalProcess("acp", [sys.executable, "-m", "servers.acp_server"], stdin=True)
         SERVERS["acp"] = self.server
         self.responses = queue.Queue()
         self.counter = 0
+        self.permission_handler = permission_handler
+        self.on_update = on_update
+        self.permission_log = []
         def read():
             for line in self.server.process.stdout:
                 try:
@@ -284,7 +287,7 @@ class ACPClient:
             self.responses.put(None)
         threading.Thread(target=read, daemon=True).start()
 
-    def request(self, method, params, timeout=180):
+    def request(self, method, params, timeout=300):
         self.counter += 1
         request = {"jsonrpc": "2.0", "id": self.counter, "method": method, "params": params}
         self.server.process.stdin.write(json.dumps(request, ensure_ascii=False) + "\n")
@@ -301,6 +304,24 @@ class ACPClient:
                 raise TimeoutError(f"ACP: истекло время ожидания {method}") from error
             if message is None:
                 raise RuntimeError(f"ACP-процесс завершился:\n{self.server.read_log()}")
+            # Запрос агента и запрос клиента имеют независимые пространства id.
+            if "method" in message and "id" in message:
+                reply = {"jsonrpc": "2.0", "id": message["id"]}
+                if message["method"] == "session/request_permission":
+                    permission = message["params"]
+                    options = permission.get("options", [])
+                    reject = next((o["optionId"] for o in options if o["kind"] == "reject_once"), None)
+                    selected = self.permission_handler(permission) if self.permission_handler else reject
+                    outcome = ({"outcome": "selected", "optionId": selected}
+                               if selected in {o["optionId"] for o in options}
+                               else {"outcome": "cancelled"})
+                    reply["result"] = {"outcome": outcome}
+                    self.permission_log.append({"request": permission, "outcome": outcome})
+                else:
+                    reply["error"] = {"code": -32601, "message": "Client method not implemented"}
+                self.server.process.stdin.write(json.dumps(reply, ensure_ascii=False) + "\n")
+                self.server.process.stdin.flush()
+                continue
             if message.get("id") == self.counter:
                 if "error" in message:
                     raise RuntimeError(f"ACP: {message['error']}")
@@ -308,6 +329,8 @@ class ACPClient:
             if "invalid_stdout" in message:
                 raise RuntimeError(f"В stdout ACP попала диагностика: {message['invalid_stdout']}")
             updates.append(message)
+            if self.on_update:
+                self.on_update(message)
 
     def stop(self):
         self.server.stop()
